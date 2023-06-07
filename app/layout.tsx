@@ -15,6 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@500&display=swap" />
       <body className={inter.className}>{children}</body>
     </html>
   )
