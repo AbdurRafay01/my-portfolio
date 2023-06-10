@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: 'Rafay', href: '#', current: true },
-  { name: '~/projects', href: '#', current: false },
-  { name: '~/posts', href: '#', current: false },
-  { name: '~/photos', href: '#', current: false },
-]
+  { name: "Rafay", href: "#", current: true },
+  { name: "~/projects", href: "#", current: false },
+  { name: "~/posts", href: "#", current: false },
+  { name: "~/photos", href: "#", current: false },
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function NavBar() {
@@ -34,23 +34,18 @@ export default function NavBar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                </div>
+                <div className="flex flex-shrink-0 items-center"></div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'decoration-1 text-purple-700' : 'text-gray-300 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                    {navigation.map((item) => {
+                      if (item.current) {
+                        return <a
+                          key={item.name}
+                          href={item.href}
+                          className={classNames()}
+                        >dasdsdsa</a>;
+                      }
+                    })}
                   </div>
                 </div>
               </div>
@@ -65,10 +60,12 @@ export default function NavBar() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium"
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
@@ -78,5 +75,5 @@ export default function NavBar() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }

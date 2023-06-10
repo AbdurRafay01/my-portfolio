@@ -4,12 +4,13 @@ import Typewriter from "typewriter-effect";
 
 export default function TypewriterComponent() {
     return (
-        <div className="font-sans underline decoration-sky-700 text-2xl">
+        <div className="font-sans text-4xl text-white">
             <Typewriter
                 options={{
-                    strings: ['I am a backend developer', 'I am a programmer', 'I work mostly in Python', 'I do gaming'],
+                    strings: ['I am a backend developer.', 'I am a programmer.', 'I work mostly with Python.', 'I do gaming.'],
                     autoStart: true,
                     loop: true,
+                    delay: 150,
                 }}
             />
         </div>
