@@ -10,7 +10,7 @@ export default function TypewriterComponent() {
                     strings: ['I am a backend developer.', 'I am a programmer.', 'I work mostly with Python.', 'I do gaming.'],
                     autoStart: true,
                     loop: true,
-                    delay: 150,
+                    delay: 250,
                 }}
             />
         </div>
